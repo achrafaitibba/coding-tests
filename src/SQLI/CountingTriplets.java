@@ -34,7 +34,6 @@ public class CountingTriplets {
             for (int j = i + 1; j < arr.length; j++) {
                 for (int k = j + 1; k < arr.length; k++) {
                     if ((arr[i] + arr[j] + arr[k]) % d == 0) {
-                        System.out.println(arr[i] + " " + arr[j] + " " + arr[k] + " ");
                         count++;
                     }
                 }
@@ -46,8 +45,13 @@ public class CountingTriplets {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 3, 4, 7, 8};
-        System.out.println(countTriplets(arr, 5));
+        int[] arr = {3, 8, 15, 23, 42, 56, 71, 84, 97, 105, 116, 135, 147, 159, 171};
+        int d = 7;
+
+        long before = System.nanoTime();
+        System.out.println(countTriplets(arr, d));
+        long after = System.nanoTime();;
+        System.out.println(after - before  + " nanoseconds");
     }
 
 }
